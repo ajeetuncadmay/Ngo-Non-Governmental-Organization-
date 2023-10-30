@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block child %}
+<style>
+    .form-control{
+    margin-bottom:2%;
+    }
+</style>
+<div class="text-center fs-2">Donate
+    <b class="txt-mycolor">Now</b>
+</div>
+<div class="row p-4">
+    <div class="col-sm-6 my-1 ">
+        <div class="row">
+<ul class="list-group">
+    <li class="list-group-item active bg-mycolor text-center fs-5"
+aria-current="true"> <b>UPI Payment Method</b></li>
+    <li class="list-group-item text-center"><img src="{% static 'images/p1.png'%}" alt="" ></li>
+  </ul>
+
+        </div>
+
+
+    </div>
+    <div class="col-sm-6 p-3 my-1 rounded" style="background-image:-webkit-linear-gradient(135deg,yellow 15%,aqua 80%);min-height:200px;">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b>Name</b>
+            <input type="text" name="name" required placeholder="Name.." class="form-control">
+            <b>Email</b>
+            <input type="email" name="email" required placeholder="Email.." class="form-control">
+            <b>Mobile(Whatsapp No:)</b>
+            <input type="number" name="mobile" required placeholder="Mobile.." class="form-control"/>
+            <b>Profile Picture</b>
+            <input type="file" name="fu" required  class="form-control"/>
+            <b>City</b>
+            <input type="text" name="city" id="" placeholder="Enter your city.." required class="form-control"/>
+            <b>Pincode</b>
+            <input type="number" name="pincode" placeholder="Pincode" required class="form-control"/>
+            <b>Amount to Donate</b>
+            <input type="number" name="amount" placeholder="Amount to pay.." required class="form-control"/>
+            <b>Address</b>
+            <textarea name="address" placeholder="Address" class="form-control"></textarea>
+            <input type="submit" value="Save" class="btn  bg-mycolor text-light"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

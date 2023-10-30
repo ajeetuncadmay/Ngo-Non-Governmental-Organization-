@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block child %}
+<div class="text-center fs-2"><b class="txt-mycolor"></b></div>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-lg-4 bg-dark text-white text-center py-4">
+            <div class="header-left">
+                <img src="{% static 'images/p3.jpg'%}" alt="" class="img-thumbnail rounded-circle mb-2" style="width: 170px;">
+                <h1 class="disply-5">Ajeet Singh</h1>
+                <h4 class="disply-5" style="color: aqua;">IIT(Rookee)</h4>
+                <h4 class="lead text-uppercase text-white-50 mb-4">Programmer</h4>
+            </div>
+            <div>
+                <h5 class="text-uppercase bg-white text-dark py2 rounded-pill" style=" background-image:-webkit-linear-gradient(135deg,rgb(33, 150, 223) 30%,rgb(8, 78, 78) 80%);min-height:2px;">contact</h5>
+            <ul class="list-unstyled text-white-50 ml-5 py-2 text-left">
+                <li class="list-item">
+                    <i class="fa-solid fa-phone fa-spin"></i>
+                    +91 9984962608
+                </li>
+
+                <li class="list-item">
+                    <i class="fa-regular fa-envelope-open"></i>
+                    ajeetsingh562004@gmail.com
+                </li>
+
+                <li class="list-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                     Gorkhapur Utter Pradesh
+                </li>
+            </ul>
+            </div>
+            <div>
+                <h5 class="text-uppercase bg-white text-dark py2 rounded-pill" style=" background-image:-webkit-linear-gradient(135deg,rgb(33, 150, 223) 30%,rgb(8, 78, 78) 80%);min-height:2px;">Skills</h5>
+            <ul class="list-unstyled text-white-50 ml-5 py-2 text-left">
+                <li class="list-item">Problem Solving</li>
+                <li class="list-item">Full stack Developer</li>
+                <li class="list-item">Video Editer</li>
+                <li class="list-item">Game</li>
+
+            </ul>
+
+            </div>
+            <div>
+                <h5 class="text-uppercase bg-white text-dark py2 rounded-pill" style=" background-image:-webkit-linear-gradient(135deg,rgb(33, 150, 223) 30%,rgb(8, 78, 78) 80%);min-height:2px;">Education</h5>
+            <ul class="list-unstyled text-white-50 ml-5 py-2 text-left">
+                <li class="list-item">10th</li>
+                <li class="list-item">12th</li>
+                <li class="list-item">Diploma Branch: C.S.E</li>
+                <li class="list-item">IIT (Rookee)</li>
+                <li class="list-item">Trained By: Softwro India</li>
+                
+            </ul>
+
+            </div>
+
+        </div>
+        <div class="col-lg-8 bg-light text-dark py-4 px-5">
+            <div class="header-right">
+                <h4 class="text-uppercase">profile</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita aliquam vitae obcaecati dolorem recusandae doloremque in corrupti earum, similique consequuntur rerum voluptas fuga asperiores sequi!</p>
+            </div>
+            <div>
+                <h4 class="text-uppercase">work experience</h4>
+                <hr>
+                <ul class="list">
+                    <li class="list-item">
+                        <h5 class="display">NO EXPERIENCE</h5>
+                    </li>
+
+                </ul>
+                <img src="{% static 'images/temple1.jpg'%}" alt="" class="img-thumbnail  mb-2" style="width: 700px;">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

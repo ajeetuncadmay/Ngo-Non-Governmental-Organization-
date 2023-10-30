@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block child %}
+<div class="text-center fs-2">Events &<b class="txt-mycolor">
+        Details
+    <i ></i></b></div>
+<div class="row">
+<div class="col-sm-10 mx-auto">
+    {% for i in data %}
+   <!-- start card-->
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/{{i.event_picture}}" class="img-fluid rounded"/>
+            </div>
+            <div class="col-md-8">
+                <div class="cord-body ps-3">
+                  <h5 class="card-title">{{i.event_title}}</h5>
+                  <p class="card-text">{{i.event_details}}</p>
+                  <p class="card-text"><big>{{i.event_purpose}}</big></p>
+                  <p class="card-text"><small class="text-body-secondary"></small></p>
+                  <p class="card-text"><small class="text-body-secondary">
+                      <i class="fa-solid fa-calendar-days"></i>{{i.event_date}}
+                      <i class="fa-solid fa-location-dot"></i>{{i.event_place}}
+                  </small> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- end card-->
+{% endfor %}
+
+</div>
+    </div>
+{% endblock %}
+

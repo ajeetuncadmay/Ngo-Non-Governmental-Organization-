@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block child %}
+
+<div class="row">
+
+  <div class="col-sm-12 p-2">
+    <!-- start slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class=  "carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/2.jpg'%}" class="d-block w-100 rounded-3" alt="..." style="max-height: 445px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        {% for i in sd %}
+
+        <div class="carousel-item">
+          <img src="/{{i.slider_picture}}" class="d-block w-100 rounded-3" alt="..." style="max-height: 445px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{i.hedlines}}</h5>
+            <p>{{i.slide_dic}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- end slider  -->
+  </div>
+</div>
+<!-- start make card-->
+<div class="row  text-center py-4">
+    <div class="fs-3 text-center" style="font-weight:bold;">
+      <u class="txt-mycolor">How we work to make a Difference</u>
+
+     </div>
+  <div class="col-sm-12 py-2">
+    <div class="row text-center">
+      <div class="col-sm-3 text-center">
+        <div class=" text-center" style="width: 18rem;">
+  <img src="{% static 'images/a5.jpg'%}" class="card-img-top" alt="..." style="border-radius:100%;min-height:150px;width:170px;">
+  <div class="card-body">
+    <h5 class="card-title">PM-POSHAN</h5>
+    <p>Progrmme</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center" style="width: 18rem;">
+  <img src="{% static 'images/a3.jpg'%}" class="card-img-top" alt="..." style="border-radius:100%;min-height:150px;width:170px;">
+  <div class="card-body">
+    <h5 class="card-title">BREAKFAST</h5>
+    <p class="card-text">Boy</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center" style="width: 18rem;">
+  <img src="{% static 'images/a4.jpg'%}" class="card-img-top" alt="..." style="border-radius:100%;min-height:150px;width:170px;">
+  <div class="card-body">
+    <h5 class="card-title">ANGANWADI</h5>
+    <p class="card-text">Feeding</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center" style="width: 18rem;">
+  <img src="{% static 'images/a7.jpg'%}" class="card-img-top" alt="..." style="border-radius:100%;min-height:150px;width:170px;">
+  <div class="card-body">
+    <h5 class="card-title">HOMELESS</h5>
+    <P>Mother</P>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- end make card-->
+
+<!-- start upcomming event -->
+
+<div class="row news px-3 bg-light text-center ">
+  <div class="fs-2 text-center"> Upcoming <b class="txt-mycolor">Events</b></div>
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+      {% for i in uedata %}
+      <div class="col-sm-3 py-2">
+        <!-- start card -->
+        <div class="card ">
+          <img src="/{{i.event_picture}}" alt="" class="card-img-top" style="max-height:300px;"/>
+          <div class="card-body">
+            <h5 class="card-title">{{i.event_title}}</h5>
+            <span>{{i.event_purpose}}</span> <br>
+            <a href="/user/viewevent?msg={{i.id}}" class="bg-mycolor text-light mt-1 btn btn-sm rounded-pill">View More
+              <i class="fa-regular fa-eye"></i>
+
+            </a> <br>
+            <span class="text-muted" style="font-size:14px;">
+             <i class="fa-solid fa-calendar-days"></i> {{i.event_date}}
+            </span>
+          </div>
+        </div>
+        <!-- end card  -->
+      </div>
+        {% endfor %}
+
+    </div>
+  </div>
+</div>
+<!-- end upcomming event  -->
+
+<!-- start volunters  -->
+
+<div class="row donater py-4 bg-mycolor">
+  <div class="fs-2 pb-2 text-center "> Our Great Gracious<b class="text-mycolor">Family</b></div>
+</div>
+<div class="row volunteer bg-mycolor">
+  <div class="col-sm-12 ms-2">
+    <div class="row py-2">
+      <!-- v-->
+  {% for i in vdata %}
+
+  <div class=" col-lg-2 col-md-4 col-sm-12">
+    <div class="card">
+      <img src="/{{i.picture}}" class="card-img-top img-thumbnail">
+      <div class="card-body">
+        <a href="/user/volunteerlist?vid={{i.email}}" style="text-decoration:none color:black;">
+      <p class="card-text text-center"><big> <b>{{i.name}}</b> </big>
+      <br/>{{i.currant_position}}</p></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+      <!--v-->
+    </div>
+  </div>
+</div>
+<!--end volunteer-->
+
+
+<!--start abouts-->
+
+
+  <div class="row about" style="background: #f2f2f2;">
+    <div class="fs-2 text-center">About<b class="txt-mycolor">Us</b></div>
+    <div class="row py-3" style="text-algen-justify">
+      <div class="col-sm-6 p-5">
+        <b>" At least 463 million school
+          children in the world, were unable to
+        access remote learning 2020" -UNICEF</b>
+        <p>
+          The major contributing factor to reduced learning capabilit
+          children is directly impacted by health and nutrition.
+          Eving has shown that food insecurity during childhood reduced
+          help children concentrate in c
+          loss and help in eliminating classroom hunger.
+        </p>
+
+      </div>
+      <div class="col-sm-6">
+        <img src="{% static 'images/boy1.png' %}" style="max-width:450px;min-height:100%;"  class="img-fluid"/>
+      </div>
+    </div>
+  </div>
+<!-- end abouts-->
+
+<!--start our vision mission-->
+<div class="fs-2 pb-2  bg-light text-center"> Our Great Gracious<b class="txt-mycolor">Donater</b></div>
+ <div class="row donator py-2 bg-light">
+      {% for x in ddata %}
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        <div class="card pt-2 my-2">
+          <a href="/user/volunteerlist?did={{x.id}}"><img src="/{{x.picture}}" alt="" class=" card-img-top d-block   text-light" sizes="height:100px; width:100px;  border:4px solid #e3e3e3;"></a>
+        <div class="card-body bg-mycolor text-center">
+          <b>{{x.name}}</b><br/>
+          <small><i class="fa-solid fa-indian-rupee-sign"></i> Amount :{{x.rupees}}/-</small>
+        </div>
+        </div>
+      </div>
+    {% endfor %}
+ </div>
+
+<div class="row bg-mycolor py-">
+  <div class="col-sm-4 ">
+    <img src="{% static 'images/s2.jpg'%}" style="max-width:450px;min-height:100%;"/>
+  </div>
+  <div class="col-sm-8 py-2 ">
+    <h1 class="text-center"><b>The Ajeet Sighaniya Foundation </b></h1>
+    <span class="fs-5" style=" text-align:justyfiy">The Ajeet Sighaniya Foundation is not-for-profit organisation
+      headquartered in Bengaluru,India.The Foundation strives to elminate classroom hunger by implementing
+    the<b>PM POSHAN</b>(Mid-Day Meal) Programme.It provides nutritious meals to children studying in government
+      school and government-aided schools.Akshaya Patra also aims to counter malnutrition and support the Right
+      to Education of children hailing from socio-economically challenging backgrounds.</span>
+    <div class="row">
+      <div class="col-sm-6 fs-3 px-5 border-end border-2">
+        Our Vision
+         <p class="fs-5">No Child in India shall be deprived <br>
+    Of Education because of hunger</p>
+      </div>
+      <div class="col-sm-6 fs-3 px-5">
+        Our Mission
+         <p class="fs-5" >No Child in India shall be deprived <br/>
+    Of Education because of hunger</p>
+      </div>
+    </div>
+
+    <a href="/user/vissionmission" class="btn btn-dark text-light rounded-pill">View More</a>
+
+</div>
+</div>
+
+<!--end our vision mission-->
+
+
+{% endblock %}

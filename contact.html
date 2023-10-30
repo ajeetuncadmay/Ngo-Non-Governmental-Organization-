@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block child %}
+<style>
+    .container
+    {
+        width: 70%;
+
+        padding: 45px;
+        border-radius: 10px;
+    }
+    .col-md-7{
+        border-radius: 10px 0px 0px 10px;
+
+
+        padding: 20px;
+        box-shadow: rgba(50, 50 , 93, 0.25) 0px 6px 12px -2px , rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    }
+    .col-md-5{
+        background: var(--bgcolor);
+        padding: 20px;
+        color: white;
+        border-radius: 0px 10px 10px 0px;
+        box-shadow: rgba(50, 50 , 93, 0.25) 0px 6px 12px -2px , rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+
+    }
+    .form-control{
+        height: 45px;
+        background: #fff;
+        background-image:-webkit-linear-gradient(135deg,yellow 30%,aqua 80%);min-height:2px;
+        color: #000;
+        font-size: 14px;
+        box-shadow: non !important;
+    }
+    .d-flex p{
+        font-size: 18px;
+        padding: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .btn{
+        border: 2px solid var(--txtcolor);
+    }
+    .btn:hover{
+        background: var(--bgcolor);
+    }
+
+    .fa-chrome:hover
+        {
+        transform:none;
+        background:none;
+        color:white;
+        border:none;
+        }
+</style>
+<div class="text-center fs-2">Need a <b class="txt-mycolor">Help</b></div>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-7 ">
+            <h3>Send Your <b class="txt-mycolor">Message </b></h3>
+            <form method="post">
+                {% csrf_token %}
+                <b>Name</b><br/>
+                <input type="text"  required class="form-control"  placeholder="Enter your name" name="name">
+                <b>Contact Number</b></br>
+                <input type="text" required class="form-control"  placeholder="Enter your number" name="mobile">
+                <b>Helptype</b><br/>
+                <input type="text" required class="form-control"  placeholder="helptype" name="helptype">
+                <b>Message</b><br/>
+                <textarea required class="form-control"  rows="3" name="msg"></textarea>
+                <b>Address</b><br/>
+                <textarea required class="form-control"  rows="3" name="address"></textarea>
+                <input type="submit" class="btn bg-mycolor mt-2">
+              </form>
+        </div>
+        <div class="col-md-5">
+            <h3>Contact Now</h3> <hr>
+            <div class="mt-4">
+                <div class="d-flex">
+                    <i class="fa-solid fa-location-dot" style="font-size: 20px;"></i>
+                    <p>Address : Gorkhapur, Uttar Pradesh</p>
+                </div> <hr>
+
+                <div class="d-flex">
+                    <i class="fa-solid fa-phone" style="font-size: 20px;"></i>
+                    <p>Contact : +91 9984962608 </p>
+                </div> <hr>
+
+                <div class="d-flex">
+                    <i class="fa-regular fa-envelope" style="font-size: 20px;"></i>
+                    <p>Email : ajeetsingh562004@gmail.com</p>
+                </div> <hr>
+
+                <div class="d-flex">
+                    <i class="fa-brands fa-chrome" style="font-size: 20px;"></i>
+                    <p>Website : www.ngohindutrust.com </p>
+                </div> <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
